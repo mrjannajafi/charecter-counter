@@ -69,6 +69,7 @@ textarea::placeholder {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  
 }
 .box {
   width: 23rem;
