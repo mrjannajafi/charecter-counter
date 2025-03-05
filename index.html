@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./images/icon/s.svg" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Character Counter</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="icon">
+        <img src="./images/icon/s.svg" alt="icon" class="icon__img" />
+        <span class="name">Character Counter</span>
+      </div>
+      <button class="light">
+        <i class="fa-sharp fa-thin fa-sun-bright"></i>
+      </button>
+    </header>
+    <main>
+      <section class="context">
+        <h1 class="title">Analyze your text  <br> in real-time</h1>
+        <textarea
+          name=""
+          id=""
+          placeholder="Start typing here... (or paste your text)"
+        ></textarea>
+      </section>
+      <section class="features">
+        <div class="box total__box">
+          <p class="number">00</p>
+          <p class="txt">Total Character</p>
+        </div>
+        <div class="box word__box">
+          <p class="number">00</p>
+          <p class="txt">Word Count</p>
+        </div>
+        <div class="box sentence__box">
+          <p class="number">00</p>
+          <p class="txt">Sentence Count</p>
+        </div>
+        <div class="box timer__box">
+          <p class="number">00 <span>min</span></p>
+          <p class="txt">Approx. Reading Time</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
