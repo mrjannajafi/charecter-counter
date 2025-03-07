@@ -1,0 +1,47 @@
+@media (max-width: 63em) {
+  .header {
+    justify-content: space-between;
+    padding: 2.4rem;
+  }
+  .title {
+    font-size: 5rem;
+    margin: 1.6rem;
+  }
+  textarea {
+    max-width: 65rem;
+  }
+  .features {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .box {
+    width: 30rem;
+  }
+}
+@media (max-width: 43em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 33em) {
+  .icon__img {
+    width: 5rem;
+  }
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+  textarea {
+    max-width: 85%;
+  }
+  .features {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .box {
+    width: 85%;
+  }
+}
