@@ -3,40 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="icon" href="./images/icon/s.svg" />
+    <link rel="favicon" href="assets/icons/logo.svg" />
+    <title>Character Counter</title>
+
+    <!-- font-icon -->
     <link
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
     />
-
     <link
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
     />
+
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Character Counter</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header class="header">
       <div class="icon">
-        <img src="./images/icon/s.svg" alt="icon" class="icon__img" />
+        <img src="assets/icons/logo.svg" alt="icon" class="icon__img" />
         <span class="name">Character Counter</span>
       </div>
-      <button class="light">
+      <button class="light" id="toggleTheme">
         <i class="fa-sharp fa-thin fa-sun-bright"></i>
       </button>
     </header>
     <main>
       <section class="context">
-        <h1 class="title">Analyze your text  <br> in real-time</h1>
+        <h1 class="title">
+          Analyze your text <br />
+          in real-time
+        </h1>
         <textarea
           name=""
           id="textInp"
@@ -44,7 +51,7 @@
         ></textarea>
       </section>
       <section class="features">
-        <div class="box total__box" >
+        <div class="box total__box">
           <p class="number" id="totalResult">00</p>
           <p class="txt">Total Character</p>
         </div>
@@ -57,11 +64,12 @@
           <p class="txt">Sentence Count</p>
         </div>
         <div class="box timer__box">
-          <p class="number" id="timeResult">00 <span>min</span></p>
+          <p class="number" id="timeResult">00</p>
           <p class="txt">Approx. Reading Time</p>
         </div>
       </section>
     </main>
-    <script src="app.js"></script>
+    <!-- scripts -->
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
