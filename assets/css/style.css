@@ -1,26 +1,36 @@
 :root {
   --bg: #1d1d1d;
   --fg: #fff;
-
+  --primary-color: #343434;
   --name-fg: var(--fg);
   --title-fg: var(--fg);
-
-  /* light */
-  --light-bg: #343434;
-  --light-fg: var(--fg);
-  --light-box-shadow: #ffffff29;
+  /* btn change theme */
+  --btn-fg :var(--primary-color) ; 
+  --btn-icon :var(--fg);
+  --btn-border : var(--primary-color) ;
+  --btn-box-shadow: #ffffff29;
+  /* textarea */
+  --textarea-bg : var(--primary-color) ;
+  --textarea-border : var(--primary-color) ;
+  --placeholder-fg : #ffffffc0 ;
+  /* feature boxs */
+  --text-feature-fg :var(--bg)
 }
 
 body.dark {
-  --bg: #807a7a;
-  --fg: #1d1d1d;
+  --bg: #F6F0F0;
+  --fg:var(--primary-color);
+  --name-fg: var(--primary-color);
+  --title-fg: var(--primary-color);
+  --btn-fg :var(--bg) ; 
+  --btn-icon :var(--primary-color);
+  --btn-border : var(--primary-color);
 
-  --name-fg: red;
+  --textarea-bg :var(--bg) ;
+  --placeholder-fg : var(--primary-color) ;
 
-  /* light */
-  --light-bg: #a1a1a1;
-  --light-fg: var(--fg);
-  --light-box-shadow: #ffffff29;
+
+
 }
 
 body {
@@ -50,9 +60,9 @@ body {
   top: 3.2rem;
   margin-left: 1rem;
 }
-.light {
-  border: none;
-  background-color: var(--light-bg);
+.theme_change {
+  border: 1px var(--btn-border) solid;
+  background-color: var(--btn-fg);
   text-align: center;
   padding: 0.8rem 1.2rem;
   border-radius: 0.8rem;
@@ -60,8 +70,8 @@ body {
   font-size: 1.8rem;
   cursor: pointer;
 }
-.light:hover {
-  box-shadow: 0 0 0 2px var(--light-box-shadow);
+.theme_change:hover {
+  box-shadow: 0 0 0 2px var(--btn-box-shadow);
 }
 main {
   max-width: 100vw;
@@ -90,13 +100,13 @@ textarea {
   height: 25vh;
   resize: vertical;
   padding: 2rem;
-  background-color: #343434;
-  border: none;
+  background-color: var(--textarea-bg);
+  border: 2px var(--textarea-border) solid;
   border-radius: 1.2rem;
-  color: hsla(0, 0%, 100%, 0.751);
+  color: var(--placeholder-fg);
 }
 textarea::placeholder {
-  color: hsla(0, 0%, 100%, 0.751);
+  color:var(--placeholder-fg);
 }
 .features {
   display: flex;
@@ -111,7 +121,7 @@ textarea::placeholder {
   padding: 1.2rem 2.4rem;
   border-radius: 1.5rem;
   text-align: left;
-  color: #1d1d1d;
+  color: var(--text-feature-fg);
   position: relative;
   overflow: hidden;
   z-index: 2;
