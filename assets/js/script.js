@@ -48,22 +48,23 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const calculateLetterDensity = function (text) {
     const letterCount = {};
-    const str = text.toLowerCase().replace(/s+/g, "");
-    // const letter = new Set(str);
+    const str = text.toLowerCase().replace(/[\n\s]+/g, "");
+    // clear
+    density.innerHTML = "";
+    // count character
     for (const char of str) {
       letterCount[char] = (letterCount[char] || 0) + 1;
     }
+    // display progress
     for (const char in letterCount) {
       const percentage = (letterCount[char] / str.length) * 100;
-
-      const html =`<div class="density_feature">
-          <p class="letter" id="letter">${char}</p>
-          <div class="progress"><div class="progress__bar" style="width: ${percentage}%" ></div>
+      const html = `<li class="density_feature">
+          <p class="letter">${char}</p>
+          <div class="density__progress"><div class="progress__bar" style="width: ${percentage}%" title="${percentage.toFixed(2)}" ></div>
         </div>
-        </div>`;
-      density.insertAdjacentHTML("beforeend", html);
+        </li>`;
+      density.insertAdjacentHTML("afterbegin", html);
     }
-    console.log(letterCount);
   };
 
   textInp.addEventListener("input", function () {

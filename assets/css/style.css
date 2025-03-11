@@ -168,27 +168,41 @@ textarea::placeholder {
   margin-top: 1.2rem;
   line-height: 1.4;
 }
+.density__part {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
 .density__title {
-  margin: 2.4rem 0;
   font-size: 3rem;
   color: var(--fg);
-  text-align:center;
+  text-align: center;
+}
+.density__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 .density_feature {
   display: flex;
   justify-content: center;
-  align-items: left;
-  gap: 2.4rem;
+  align-items:center;
+  gap: 1rem;
 }
 .letter {
-  text-align: left;
-  color: var(--fg);
+  min-width: 5rem;
   font-size: 2.4rem;
+  color: var(--fg);
+  text-align: center;
 }
-.progress {
+.density__progress {
   background-color: var(--progress-bg);
   width: 100rem;
-  height: 2rem;
+  height: 1.5rem;
   border-radius: 5rem;
   z-index: 1;
   box-shadow: 0 0 0 1px var(--progress-border);
@@ -200,6 +214,7 @@ textarea::placeholder {
   background-color: #ffd25d;
   border-radius: 5rem;
   z-index: 2;
+  cursor: pointer;
 }
 
 /* responsive */
