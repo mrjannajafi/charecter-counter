@@ -5,32 +5,32 @@
   --name-fg: var(--fg);
   --title-fg: var(--fg);
   /* btn change theme */
-  --btn-fg :var(--primary-color) ; 
-  --btn-icon :var(--fg);
-  --btn-border : var(--primary-color) ;
+  --btn-fg: var(--primary-color);
+  --btn-icon: var(--fg);
+  --btn-border: var(--primary-color);
   --btn-box-shadow: #ffffff29;
   /* textarea */
-  --textarea-bg : var(--primary-color) ;
-  --textarea-border : var(--primary-color) ;
-  --placeholder-fg : #ffffffc0 ;
+  --textarea-bg: var(--primary-color);
+  --textarea-border: var(--primary-color);
+  --placeholder-fg: #ffffffc0;
   /* feature boxs */
-  --text-feature-fg :var(--bg)
+  --text-feature-fg: var(--bg);
+  /* density */
+  --progress-bg: var(--fg);
+  --progress-border: var(--fg);
 }
 
 body.dark {
-  --bg: #F6F0F0;
-  --fg:var(--primary-color);
+  --bg: #f6f0f0;
+  --fg: var(--primary-color);
   --name-fg: var(--primary-color);
   --title-fg: var(--primary-color);
-  --btn-fg :var(--bg) ; 
-  --btn-icon :var(--primary-color);
-  --btn-border : var(--primary-color);
-
-  --textarea-bg :var(--bg) ;
-  --placeholder-fg : var(--primary-color) ;
-
-
-
+  --btn-fg: var(--bg);
+  --btn-icon: var(--primary-color);
+  --btn-border: var(--primary-color);
+  --textarea-bg: var(--bg);
+  --placeholder-fg: var(--primary-color);
+  --progress-border: var(--primary-color);
 }
 
 body {
@@ -106,7 +106,7 @@ textarea {
   color: var(--placeholder-fg);
 }
 textarea::placeholder {
-  color:var(--placeholder-fg);
+  color: var(--placeholder-fg);
 }
 .features {
   display: flex;
@@ -117,7 +117,7 @@ textarea::placeholder {
 }
 .box {
   width: 23rem;
-  height: 12rem;
+  min-height: 12rem;
   padding: 1.2rem 2.4rem;
   border-radius: 1.5rem;
   text-align: left;
@@ -167,6 +167,39 @@ textarea::placeholder {
   font-size: 1.8rem;
   margin-top: 1.2rem;
   line-height: 1.4;
+}
+.density__title {
+  margin: 2.4rem 0;
+  font-size: 3rem;
+  color: var(--fg);
+  text-align:center;
+}
+.density_feature {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  gap: 2.4rem;
+}
+.letter {
+  text-align: left;
+  color: var(--fg);
+  font-size: 2.4rem;
+}
+.progress {
+  background-color: var(--progress-bg);
+  width: 100rem;
+  height: 2rem;
+  border-radius: 5rem;
+  z-index: 1;
+  box-shadow: 0 0 0 1px var(--progress-border);
+  overflow: hidden;
+}
+.progress__bar {
+  display: inline-block;
+  height: 100%;
+  background-color: #ffd25d;
+  border-radius: 5rem;
+  z-index: 2;
 }
 
 /* responsive */

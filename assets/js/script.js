@@ -5,7 +5,8 @@ window.addEventListener("DOMContentLoaded", function () {
   const sentenceResult = document.getElementById("sentenceResult");
   const timeResult = document.getElementById("timeResult");
   const toggleThemeBtn = document.getElementById("toggleTheme");
-  const btnIcon = this.document.getElementById("btnIcon");
+  const btnIcon = document.getElementById("btnIcon");
+  const density = document.getElementById("density");
 
   const countCharacter = function (text) {
     const characters = text.split("");
@@ -45,17 +46,38 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  const calculateLetterDensity = function (text) {
+    const letterCount = {};
+    const str = text.toLowerCase().replace(/s+/g, "");
+    // const letter = new Set(str);
+    for (const char of str) {
+      letterCount[char] = (letterCount[char] || 0) + 1;
+    }
+    for (const char in letterCount) {
+      const percentage = (letterCount[char] / str.length) * 100;
+
+      const html =`<div class="density_feature">
+          <p class="letter" id="letter">${char}</p>
+          <div class="progress"><div class="progress__bar" style="width: ${percentage}%" ></div>
+        </div>
+        </div>`;
+      density.insertAdjacentHTML("beforeend", html);
+    }
+    console.log(letterCount);
+  };
+
   textInp.addEventListener("input", function () {
     const text = textInp.value;
     countCharacter(text);
     countSentence(text);
     countWord(text);
     countTime(text);
+    calculateLetterDensity(text);
   });
 
   toggleThemeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-    btnIcon.classList.toggle('fa-thin')
+    btnIcon.classList.toggle("fa-thin");
     btnIcon.classList.toggle("fa-moon");
   });
 });
