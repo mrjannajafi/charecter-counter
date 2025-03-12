@@ -273,9 +273,9 @@ textarea::placeholder {
     width: 85%;
   }
   .density__part {
-    max-width: 35rem;
+    max-width: 38rem;
   }
   .density__progress {
-    width:30rem;
+    width:35rem;
   }
 }
