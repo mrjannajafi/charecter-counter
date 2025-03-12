@@ -55,23 +55,25 @@ window.addEventListener("DOMContentLoaded", function () {
     }
     const letterDensity = [];
     for (const char in letterCount) {
-      // clear
-      density.innerHTML = "";
-      // sorting high density 
+      // sorting high density
       const percentage = (letterCount[char] / str.length) * 100;
       letterDensity.push([char, percentage]);
-      letterDensity.sort((a, b) => a[1] - b[1]);
-      // display progress
-      for (const [char, percentage] of letterDensity.slice(0 , 5)) {
-        const html = `<li class="density_feature">
+    }
+    letterDensity.sort((a, b) => a[1] - b[1]);
+    // clear
+    density.innerHTML = "";
+    // display progress
+    for (const [char, percentage] of letterDensity.slice(0, 10)) {
+      const html = `<li class="density_feature">
         <p class="letter">${char}</p>
         <div class="density__progress">
-        <div class="progress__bar" style="width: ${percentage}%" title="${percentage.toFixed(2)}">
+        <div class="progress__bar" style="width: ${percentage}%" title="${percentage.toFixed(
+        2
+      )}">
         </div>
       </div>
       </li>`;
-        density.insertAdjacentHTML("afterbegin", html);
-      }
+      density.insertAdjacentHTML("afterbegin", html);
     }
   };
 
