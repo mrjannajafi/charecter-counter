@@ -169,7 +169,8 @@ textarea::placeholder {
   line-height: 1.4;
 }
 .density__part {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -178,14 +179,14 @@ textarea::placeholder {
 .density__title {
   font-size: 3rem;
   color: var(--fg);
-  text-align: center;
+  text-align: left;
+  align-self: flex-start;
 }
 .density__list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
 }
 .density_feature {
   display: flex;
@@ -207,6 +208,9 @@ textarea::placeholder {
   z-index: 1;
   box-shadow: 0 0 0 1px var(--progress-border);
   overflow: hidden;
+}
+.density__part:has(#density:empty){
+  display: none;
 }
 .progress__bar {
   display: inline-block;

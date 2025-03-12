@@ -49,21 +49,29 @@ window.addEventListener("DOMContentLoaded", function () {
   const calculateLetterDensity = function (text) {
     const letterCount = {};
     const str = text.toLowerCase().replace(/[\n\s]+/g, "");
-    // clear
-    density.innerHTML = "";
     // count character
     for (const char of str) {
       letterCount[char] = (letterCount[char] || 0) + 1;
     }
-    // display progress
+    const letterDensity = [];
     for (const char in letterCount) {
+      // clear
+      density.innerHTML = "";
+      // sorting high density 
       const percentage = (letterCount[char] / str.length) * 100;
-      const html = `<li class="density_feature">
-          <p class="letter">${char}</p>
-          <div class="density__progress"><div class="progress__bar" style="width: ${percentage}%" title="${percentage.toFixed(2)}" ></div>
+      letterDensity.push([char, percentage]);
+      letterDensity.sort((a, b) => a[1] - b[1]);
+      // display progress
+      for (const [char, percentage] of letterDensity.slice(0 , 5)) {
+        const html = `<li class="density_feature">
+        <p class="letter">${char}</p>
+        <div class="density__progress">
+        <div class="progress__bar" style="width: ${percentage}%" title="${percentage.toFixed(2)}">
         </div>
-        </li>`;
-      density.insertAdjacentHTML("afterbegin", html);
+      </div>
+      </li>`;
+        density.insertAdjacentHTML("afterbegin", html);
+      }
     }
   };
 
